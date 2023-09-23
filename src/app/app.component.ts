@@ -10,10 +10,28 @@ import { Component } from '@angular/core';
       src="/assets/img/logoVisu.jpg"
     />
     <nav class="navbar navbar-expand navbar-light bg-light">
-      <a class="navbar-brand">{{title}}</a>
       <ul class="nav nav-pills">
-        <li><a class="nav-link" routerLink="/guillaume">Home</a></li>
-        <li><a class="nav-link" routerLink="/products">Product List</a></li>
+        <li><a class="nav-link" style="color: white;" routerLink="/welcome">Home</a></li>
+      </ul>
+    </nav>
+    <nav class="navbar navbar-expand navbar-light bg-light">
+      <ul class="nav nav-pills">
+        <li><a class="nav-link" style="color: white;" routerLink="/guillaume">Guillaume visualisation</a></li>
+      </ul>
+    </nav>
+    <nav class="navbar navbar-expand navbar-light bg-light">
+      <ul class="nav nav-pills">
+        <li><a class="nav-link" style="color: white;" routerLink="/nicolas">Nicolas visualisation</a></li>
+      </ul>
+    </nav>
+    <nav class="navbar navbar-expand navbar-light bg-light">
+      <ul class="nav nav-pills">
+        <li><a class="nav-link" style="color: white;" routerLink="/fabian">Fabian visualisation</a></li>
+      </ul>
+    </nav>
+    <nav class="navbar navbar-expand navbar-light bg-light">
+      <ul class="nav nav-pills">
+        <li><a class="nav-link" style="color: white;" routerLink="/yohan">Yohan visualisation</a></li>
       </ul>
     </nav>
   </div>
