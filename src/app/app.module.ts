@@ -9,11 +9,13 @@ import { NicolasComponent } from './nicolas/nicolas.component';
 import { FabianComponent } from './fabian/fabian.component';
 import { GuillaumeComponent } from './guillaume/guillaume.component';
 import { YohanComponent } from './yohan/yohan.component';
+import {FormsModule} from "@angular/forms";
+import {CommonModule} from "@angular/common";
 
 
 @NgModule({
   declarations: [AppComponent, NicolasComponent, FabianComponent, GuillaumeComponent, YohanComponent, WelcomeComponent],
-  imports: [BrowserModule,HttpClientModule,
+  imports: [BrowserModule,HttpClientModule, FormsModule, CommonModule,
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
       { path: 'guillaume', component: GuillaumeComponent},

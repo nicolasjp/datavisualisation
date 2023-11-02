@@ -1,3 +1,68 @@
 <br><br><br><br><br><br>
-<svg width="800" height="50"></svg>
+<!-- FILTRES -->
+<!-- Filtre "Location" sous forme de liste déroulante -->
+<label for="location-filtre">Filtrer par Location :</label>
+<select id="location-filtre" (change)="updateLocationFilter($event)" [(ngModel)]="locationDropdownIndex">
+  <option value="toutes">Toutes les Locations</option>
+  <option value="United States">United States</option>
+  <option value="Belgium">Belgium</option>
+  <option value="Netherlands">Netherlands</option>
+  <option value="Sweden">Sweden</option>
+</select>
+<br>
+<!-- Filtre "Genre" sous forme de liste déroulante -->
+<label for="genre-filtre">Filtrer par Genre :</label>
+<select id="genre-filtre" (change)="updateGenreFilter($event)" [(ngModel)]="genreDropdownIndex">
+  <option value="tous">Tous les Genres</option>
+  <option value="Classical">Classical</option>
+  <option value="Rock">Rock</option>
+  <option value="Deathcore">Deathcore</option>
+  <option value="Heavy Metal">Heavy Metal</option>
+</select>
+<br>
+<!-- Bouton pour réinitialiser les filtres -->
+<button id="reinitialiser-filtres-bouton" class="filtre-bouton" (click)="resetFilters()">Réinitialiser les Filtres</button>
 
+<br>
+
+<!-- GRAPHIQUE D3 -->
+<svg width="800" height="50">
+</svg>
+
+<div class="container">
+  <div class="colonne-gauche">
+    <!-- LISTES ARTISTES D'UNE ANNEE -->
+    <table *ngIf="anneeSelected">
+      <thead>
+      <tr>
+        <th>Artiste apparu en {{ anneeSelected }}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let artiste of artistesDeCetteAnnee">
+        <td>{{ artiste.name }}</td>
+        <td><button (click)="afficherDetails(artiste)">Détails</button></td>
+      </tr>
+      </tbody>
+      <button (click)="effacerListe()">Effacer la liste</button>
+    </table>
+  </div>
+  <div class="colonne-droite">
+    <!-- DETAILS D'UN ARTISTE-->
+    <div *ngIf="selectedArtist">
+      <h2>Détails de l'artiste</h2>
+      <p><strong>Nom :</strong> {{ selectedArtist.name }}</p>
+      <p><strong>Année de début :</strong> {{ selectedArtist.lifeSpan }}</p>
+      <p><strong>Lieu :</strong> {{ selectedArtist.location }}</p>
+      <p><strong>Genre :</strong> {{selectedArtist.genres ? selectedArtist.genres : "Non référencé"}}</p>
+      <p><strong>Albums :</strong></p>
+      <div *ngFor="let album of selectedArtist.albums">
+        <p><strong>&nbsp;&nbsp;&nbsp;Nom de l'album :</strong> {{album.title}}</p>
+        <p><strong>&nbsp;&nbsp;&nbsp;Date de publication :</strong> {{album.publicationDate}}</p>
+        <p><strong>&nbsp;&nbsp;&nbsp;Musiques :</strong> {{album.songs}}</p>
+      </div>
+      <!-- Autres détails de l'artiste -->
+      <button (click)="effacerDetails()">Fermer les détails</button>
+    </div>
+  </div>
+</div>

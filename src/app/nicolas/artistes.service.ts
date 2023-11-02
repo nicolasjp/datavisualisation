@@ -38,18 +38,19 @@ export class ArtistesService {
   }
 
   getArtistesBis(): IArtistes[]{
+    this.artistes = [];
     this.artistes.push({
       "name": "A Band Called Pain",
-      "genres": ["Heavy Metal"],
+      "genres": "Heavy Metal",
       "lifeSpan": "2001",
       "location": "United States",
       "albums": [
         {
           "title": "Broken Dreams",
           "publicationDate": "2007",
-          "songs": ["Holy","State Of The Union","The Pieces","Grave","Hole","Broken Dreams","The War Song",
-            "How Would It Feel","County Line","Hellbound","Freedom Ain't Free","Charger","Embrace The Pain",
-            "Walk Away","Ten Fold","All Over Me","Goodbye"
+          "songs": ["Holy", "State Of The Union", "The Pieces", "Grave", "Hole", "Broken Dreams", "The War Song",
+            "How Would It Feel", "County Line", "Hellbound", "Freedom Ain't Free", "Charger", "Embrace The Pain",
+            "Walk Away", "Ten Fold", "All Over Me", "Goodbye"
           ]
         },
         {
@@ -64,7 +65,7 @@ export class ArtistesService {
     },
     {
       "name": "A Black Rose Burial",
-      "genres": [],
+      "genres": "",
       "lifeSpan": "2001",
       "location": "United States",
       "albums": [
@@ -84,7 +85,7 @@ export class ArtistesService {
     },
     {
       "name": "A Breath Before Surfacing",
-      "genres": ["Deathcore"],
+      "genres": "Deathcore",
       "lifeSpan": "2006",
       "location": "United States",
       "albums": [
@@ -100,7 +101,7 @@ export class ArtistesService {
     },
     {
       "name": "A Brand",
-      "genres": [],
+      "genres": "",
       "lifeSpan": "2004",
       "location": "Belgium",
       "albums": [
@@ -115,7 +116,7 @@ export class ArtistesService {
     },
     {
       "name": "A Camp",
-      "genres": ["Alternative Rock"],
+      "genres": "Rock",
       "lifeSpan": "2001",
       "location": "Sweden",
       "albums": [
@@ -146,7 +147,7 @@ export class ArtistesService {
     },
     {
       "name": "A Challenge Of Honour",
-      "genres": ["Classical"],
+      "genres": "Classical",
       "lifeSpan": "2000",
       "location": "Netherlands",
       "albums": [
