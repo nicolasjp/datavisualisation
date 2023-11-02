@@ -1,0 +1,19 @@
+/* Styles pour le conteneur principal */
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Styles pour la colonne de gauche (graphique) */
+.colonne-gauche {
+  width: 70%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Styles pour la colonne de droite (liste d'artistes) */
+.colonne-droite {
+  width: 30%;
+  padding: 20px;
+  box-sizing: border-box;
+}
