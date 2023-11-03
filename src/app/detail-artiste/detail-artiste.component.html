@@ -1,0 +1,19 @@
+<br><br><br>
+<div class="colonne-droite">
+  <!-- DETAILS D'UN ARTISTE-->
+  <div *ngFor="let artiste of selectedArtist">
+    <h2>Détails de l'artiste : <strong>{{ artiste.name }}</strong></h2>
+    <p><strong>Année de début :</strong> {{ artiste.lifeSpan }}</p>
+    <p><strong>Lieu :</strong> {{ artiste.location }}</p>
+    <p><strong>Genre :</strong> {{ artiste.genres ? artiste.genres : "Non référencé"}}</p>
+    <p><strong>Albums :</strong></p>
+    <div *ngFor="let album of artiste.albums">
+      <p><strong>&nbsp;&nbsp;&nbsp;Nom de l'album :</strong> {{album.title}}</p>
+      <p><strong>&nbsp;&nbsp;&nbsp;Date de publication :</strong> {{album.publicationDate ? album.publicationDate : "Non référencé"}}</p>
+      <p><strong>&nbsp;&nbsp;&nbsp;Musiques :</strong> {{album.songs}}</p>
+      <p>&nbsp;&nbsp;&nbsp;--------------------------------------------------------</p>
+    </div>
+    <button class="boutonSuppr" (click)="effacerDetails()">Retour</button>
+    <!-- Autres détails de l'artiste -->
+  </div>
+</div>

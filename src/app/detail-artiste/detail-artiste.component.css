@@ -1,0 +1,22 @@
+.boutonSuppr{
+  background-color: #333333;
+  border-radius: 10px;
+  border: 4px double black;
+  color: #ffffff;
+  text-align: center;
+  font-size: 15px;
+  width: 70px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.boutonSuppr:hover{
+  background-color: #fafbfc;
+  border: 2px solid black;
+  box-shadow: 10px 5px 5px #333333;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+}
