@@ -40,6 +40,7 @@ export class ArtistesService {
   getArtistesBis(): IArtistes[]{
     this.artistes = [];
     this.artistes.push({
+      "id": 1,
       "name": "A Band Called Pain",
       "genres": "Heavy Metal",
       "lifeSpan": "2001",
@@ -64,6 +65,7 @@ export class ArtistesService {
       ]
     },
     {
+      "id": 2,
       "name": "A Black Rose Burial",
       "genres": "",
       "lifeSpan": "2001",
@@ -84,6 +86,7 @@ export class ArtistesService {
       ]
     },
     {
+      "id": 3,
       "name": "A Breath Before Surfacing",
       "genres": "Deathcore",
       "lifeSpan": "2006",
@@ -100,6 +103,7 @@ export class ArtistesService {
       ]
     },
     {
+      "id": 4,
       "name": "A Brand",
       "genres": "",
       "lifeSpan": "2004",
@@ -115,6 +119,7 @@ export class ArtistesService {
       ]
     },
     {
+      "id": 5,
       "name": "A Camp",
       "genres": "Rock",
       "lifeSpan": "2001",
@@ -146,6 +151,7 @@ export class ArtistesService {
       ]
     },
     {
+      "id": 6,
       "name": "A Challenge Of Honour",
       "genres": "Classical",
       "lifeSpan": "2000",
