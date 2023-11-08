@@ -10,7 +10,7 @@ describe('GuillaumeComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ GuillaumeComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
