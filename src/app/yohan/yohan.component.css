@@ -1,0 +1,168 @@
+/* Style pour les filtres */
+#location-filtre,
+#genre-filtre,
+#reinitialiser-filtres-bouton {
+  margin-right: 20px; /* Espace entre les éléments de filtre */
+}
+
+/* Style pour la colonne gauche (liste d'artistes) */
+.colonne-gauche {
+  float: left;
+  width: 50%; /* 50% de la largeur de l'écran */
+}
+
+/* Style pour la colonne droite (détails d'artiste) */
+.colonne-droite {
+  float: left;
+  width: 50%; /* 50% de la largeur de l'écran */
+}
+
+/* Style pour les tableaux */
+table {
+  width: 100%;
+  margin: 20px 0 20px 50px;
+}
+
+h2 {
+    margin-left: 50px;
+}
+
+.filters{
+    margin-left: 50px;
+}
+
+/* Style pour le bouton "Effacer la liste" */
+table button {
+  display: block;
+  margin-top: 10px; /* Espacement du bouton par rapport aux éléments précédents */
+}
+
+/* Style pour le bouton "Fermer les détails" */
+.colonne-droite button {
+  display: block;
+  margin-top: 10px; /* Espacement du bouton par rapport aux éléments précédents */
+}
+
+.bouton{
+  background-color: #719fee;
+  border-radius: 10px;
+  border: 4px double #1f69ec;
+  color: #ffffff;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 180px;
+  margin-top: -2em;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.bouton:hover{
+  background-color: #fafbfc;
+  border: 2px solid #1f69ec;
+  box-shadow: 10px 5px 5px #719fee;
+  color: #1f69ec;
+  text-align: center;
+  font-size: 16px;
+}
+
+
+select {
+  /* styling */
+  background-color: white;
+  border: thin solid black;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+  /* reset */
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+select.minimal {
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+select.minimal:focus {
+  background-image:
+    linear-gradient(45deg, green 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, green 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: green;
+  outline: 0;
+}
+
+.boutonSuppr{
+  background-color: #333333;
+  border-radius: 10px;
+  border: 4px double black;
+  color: #ffffff;
+  text-align: center;
+  font-size: 15px;
+  width: 70px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.boutonSuppr:hover{
+  background-color: #fafbfc;
+  border: 2px solid black;
+  box-shadow: 10px 5px 5px #333333;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+}
+
+.boutonDetails{
+  background-color: #719fee;
+  border-radius: 10px;
+  border: 4px double #1f69ec;
+  color: #ffffff;
+  text-align: center;
+  font-size: 15px;
+  width: 70px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.boutonDetails:hover{
+  background-color: #fafbfc;
+  border: 2px solid #1f69ec;
+  box-shadow: 10px 5px 5px #719fee;
+  color: #1f69ec;
+  text-align: center;
+  font-size: 16px;
+}

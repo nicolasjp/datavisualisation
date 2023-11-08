@@ -22,6 +22,7 @@ import { DetailArtisteComponent } from './detail-artiste/detail-artiste.componen
       { path: 'guillaume', component: GuillaumeComponent},
       { path: 'nicolas', component: NicolasComponent},
       { path: 'nicolas/:id', component: DetailArtisteComponent},
+      { path: 'yohan/:id', component: DetailArtisteComponent},
       { path: 'fabian', component: FabianComponent},
       { path: 'yohan', component: YohanComponent},
       { path: '', redirectTo: "welcome", pathMatch: "full" },
