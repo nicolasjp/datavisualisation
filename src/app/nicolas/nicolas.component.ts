@@ -139,7 +139,7 @@ export class NicolasComponent implements OnInit, OnDestroy {
       }
     }
     const y = d3.scaleLinear()
-      .domain([0, maxValue])
+      .domain([0, maxValue+2])
       .nice()
       .range([hauteur, 0]);
 
@@ -212,14 +212,16 @@ export class NicolasComponent implements OnInit, OnDestroy {
       .attr('x', largeurGraphique / 2)
       .attr('y', hauteurGraphique - 5)
       .attr('text-anchor', 'middle')
-      .text('Année de début de carrière');
+      .text('Année de début de carrière')
+      .style('font-weight', 'bold');
 
     svg.append('text')
       .attr('transform', 'rotate(-90)')
       .attr('x', -hauteurGraphique / 2)
       .attr('y', 10)
       .attr('text-anchor', 'middle')
-      .text('Nombre d\'artistes');
+      .text('Nombre d\'artistes')
+      .style('font-weight', 'bold');
     // Mettre à jour le graphique en utilisant les données filtrées
     // ... Votre code pour mettre à jour le graphique ...
   }
