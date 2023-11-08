@@ -28,7 +28,7 @@ export class DetailArtisteComponent {
 
   effacerDetails() {
     this.selectedArtist = [];
-    this.router.navigate(["/nicolas"]);
+    window.history.back();
   }
 
 }

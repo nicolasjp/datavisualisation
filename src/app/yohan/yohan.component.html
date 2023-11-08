@@ -1,5 +1,46 @@
-<p>yohan works!</p>
-<p>yohan works!</p>
-<p>yohan works!</p>
-<p>yohan works!</p>
-<p>yohan works!</p>
+<h2>Visualisation des dates de début de carrières pour l'ensemble des artistes</h2>
+<br>
+<!-- FILTRES -->
+<!-- Filtre "Location" sous forme de liste déroulante -->
+<div class="filters">
+<strong><label for="location-filtre">Location : </label></strong>
+<select class="minimal" id="location-filtre" (change)="updateLocationFilter($event)" [(ngModel)]="locationDropdownIndex">
+  <option value="toutes">Toutes les Locations</option>
+  <option value="United States">United States</option>
+  <option value="Belgium">Belgium</option>
+  <option value="Netherlands">Netherlands</option>
+  <option value="Sweden">Sweden</option>
+</select>
+<!-- Filtre "Genre" sous forme de liste déroulante -->
+<strong><label for="genre-filtre">Genre : </label></strong>
+<select class="minimal" id="genre-filtre" (change)="updateGenreFilter($event)" [(ngModel)]="genreDropdownIndex">
+  <option value="tous">Tous les Genres</option>
+  <option value="Classical">Classical</option>
+  <option value="Rock">Rock</option>
+  <option value="Deathcore">Deathcore</option>
+  <option value="Heavy Metal">Heavy Metal</option>
+</select>
+<!-- Bouton pour réinitialiser les filtres -->
+<button id="reinitialiser-filtres-bouton" class="bouton" (click)="resetFilters()">Réinitialiser les Filtres</button>
+</div>
+<svg width="800" height="50">
+</svg>
+
+<div class="container">
+    <div class="colonne-gauche">
+      <!-- LISTES ARTISTES D'UNE ANNEE -->
+      <table *ngIf="anneeSelected">
+        <thead>
+        <tr>
+          <th>Artiste apparu en {{ anneeSelected }}</th><button class="boutonSuppr" (click)="effacerListe()">Fermer</button>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let artiste of artistesDeCetteAnnee">
+          <td>{{ artiste.name }}</td>
+          <td><button class="boutonDetails" (click)="afficherDetails(artiste)" [routerLink]="['/yohan', artiste.id]">Détails</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
