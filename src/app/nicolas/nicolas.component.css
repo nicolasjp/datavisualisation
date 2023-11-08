@@ -1,3 +1,7 @@
+.marg{
+  margin-left: 2em;
+}
+
 /* Style pour les filtres */
 #location-filtre,
 #genre-filtre,

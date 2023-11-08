@@ -115,7 +115,11 @@ export class NicolasComponent implements OnInit, OnDestroy {
 
     const svg = d3.select('body').append('svg')
       .attr('width', largeurGraphique)
-      .attr('height', hauteurGraphique);
+      .attr('height', hauteurGraphique)
+      .style('position', 'absolute')
+      .style('top', '60%')
+      .style('left', '70%')
+      .style('transform', 'translate(-50%, -50%)');
 
     const largeur = largeurGraphique - marge.gauche - marge.droite;
     const hauteur = hauteurGraphique - marge.haut - marge.bas;

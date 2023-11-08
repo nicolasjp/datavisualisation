@@ -17,12 +17,14 @@
 
 /* Style for the radial bar chart container */
 .radial-bar-chart-container {
+  margin-top: -2em;
   flex: 1; /* Take up 50% of the available space */
 }
 
 /* Style for the filters and artist details container */
 .filters-details-container {
-  margin-top: 4em;
+  margin-top: -1em;
+  margin-left: -3em;
   flex: 1; /* Take up 50% of the available space */
 }
 
