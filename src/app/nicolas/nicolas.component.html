@@ -1,6 +1,6 @@
 <div class="marg">
   <h2>Visualisation des dates de début de carrières pour l'ensemble des artistes</h2>
-  <h4 class="title">Les années sont rangées dans l'ordre croissant en fonction du nombre d'artiste par année</h4>
+  <h4 class="title">Les années sont rangées dans l'ordre croissant en fonction du nombre d'artiste par année.</h4>
   <br>
   <!-- FILTRES -->
   <!-- Filtre "Location" sous forme de liste déroulante -->
@@ -11,6 +11,10 @@
     <option value="Belgium">Belgium</option>
     <option value="Netherlands">Netherlands</option>
     <option value="Sweden">Sweden</option>
+    <option value="Germany">Germany</option>
+    <option value="Australia">Australia</option>
+    <option value="England">England</option>
+    <option value="Canada">Canada</option>
   </select>
   <!-- Filtre "Genre" sous forme de liste déroulante -->
   <strong><label for="genre-filtre">Genre : </label></strong>
@@ -19,7 +23,8 @@
     <option value="Classical">Classical</option>
     <option value="Rock">Rock</option>
     <option value="Deathcore">Deathcore</option>
-    <option value="Heavy Metal">Heavy Metal</option>
+    <option value="Metal">Metal</option>
+    <option value="Pop">Pop</option>
   </select>
   <!-- Bouton pour réinitialiser les filtres -->
   <button id="reinitialiser-filtres-bouton" class="bouton" (click)="resetFilters()">Réinitialiser les Filtres</button>

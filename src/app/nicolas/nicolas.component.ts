@@ -171,6 +171,13 @@ export class NicolasComponent implements OnInit, OnDestroy {
       .range([0, largeur])
       .padding(0.1);
 
+    const colors = d3.scaleOrdinal(d3.schemeCategory10);
+    const heights = Object.values(this.artistesParAnnee).map(Number); // Obtenez les hauteurs des barres
+
+    const colorScale = d3.scaleOrdinal<string>()
+      .domain(heights.map(String)) // Utilisez les hauteurs possibles comme domaine (en les convertissant en chaînes de caractères)
+      .range(d3.schemeCategory10); // Choisissez une palette de couleurs
+
     graphique.selectAll('rect')
       .data(Object.entries(this.artistesParAnnee))
       .enter().append('rect')
@@ -187,11 +194,13 @@ export class NicolasComponent implements OnInit, OnDestroy {
         }
         return 0; // Gestion des cas où count n'est pas un nombre
       })
-      .attr('fill', 'steelblue')
+      .attr('fill', (d) => colorScale(String(d[1])))
       .attr('x', (d) => {
         const annee = d[0].toString(); // Convertissez l'année en chaîne de caractères
         return xScale(annee) || 0; // Utilisez xScale et assurez-vous de renvoyer une valeur par défaut si xScale renvoie undefined
-      });
+      })
+      .attr('data-original-color', (d) => colorScale(String(d[1])));
+
 
     graphique.selectAll('rect')
       .on('mouseover', function () {
@@ -199,8 +208,8 @@ export class NicolasComponent implements OnInit, OnDestroy {
         d3.select(this).attr('fill', 'red'); // Par exemple, changez la couleur de la barre
       })
       .on('mouseout', function () {
-        // Réagissez lorsque la souris quitte la barre
-        d3.select(this).attr('fill', 'steelblue'); // Rétablissez la couleur de la barre
+        const originalColor = d3.select(this).attr('data-original-color');
+        d3.select(this).attr('fill', originalColor);
       })
       .on('click', (d) => {
         // Réagissez au clic sur la barre

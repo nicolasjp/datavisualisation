@@ -42,7 +42,7 @@ export class ArtistesService {
     this.artistes.push({
       "id": 1,
       "name": "A Band Called Pain",
-      "genres": "Heavy Metal",
+      "genres": "Metal",
       "lifeSpan": "2001",
       "location": "United States",
       "albums": [
