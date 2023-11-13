@@ -19,6 +19,8 @@ export class NicolasComponent implements OnInit, OnDestroy {
   selectedArtist: IArtistes | null = null;
   artistesDeCetteAnnee : IArtistes[] = [];
   anneeSelected: string = "";
+  axeAnnee: string[] = [];
+  axeValues: number[] = [];
 
   constructor(private artistesService: ArtistesService) {
   }
@@ -108,6 +110,23 @@ export class NicolasComponent implements OnInit, OnDestroy {
       }
     });
 
+    // Convertir l'objet de paires clé-valeur en un tableau d'objets
+    const artistesParAnneeArray = Object.keys(this.artistesParAnnee).map(annee => ({
+      annee: annee,
+      nombre: this.artistesParAnnee[annee]
+    }));
+
+    // Trier le tableau en fonction du nombre d'artistes de manière croissante
+    artistesParAnneeArray.sort((a, b) => a.nombre - b.nombre);
+    this.axeAnnee = [];
+    this.axeValues = [];
+    artistesParAnneeArray.forEach((a) => {
+      if(a.nombre !== 0){
+        this.axeAnnee.push(a.annee);
+        this.axeValues.push(a.nombre);
+      }
+    })
+
     // 4. Utiliser D3.js pour créer le graphique à barres
     const largeurGraphique = 800;
     const hauteurGraphique = 400;
@@ -128,11 +147,11 @@ export class NicolasComponent implements OnInit, OnDestroy {
       .attr('transform', `translate(${marge.gauche},${marge.haut})`);
 
     const x = d3.scaleBand()
-      .domain(Object.keys(this.artistesParAnnee))
+      .domain(this.axeAnnee)
       .range([0, largeur])
       .padding(0.1);
 
-    const artistesParAnneeValues = Object.values(this.artistesParAnnee)
+    const artistesParAnneeValues = this.axeValues
       .filter(val => val !== undefined && val.toString() !== "")
       .map(Number);
     // Calculer le maximum en utilisant une boucle for
@@ -148,7 +167,7 @@ export class NicolasComponent implements OnInit, OnDestroy {
       .range([hauteur, 0]);
 
     const xScale = d3.scaleBand()
-      .domain(Object.keys(this.artistesParAnnee).map(annee => annee.toString()))
+      .domain(this.axeAnnee.map(annee => annee.toString()))
       .range([0, largeur])
       .padding(0.1);
 

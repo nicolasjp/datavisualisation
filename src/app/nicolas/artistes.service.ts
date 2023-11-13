@@ -517,6 +517,47 @@ export class ArtistesService {
               "Interlude","Downhill Wheelchair Racing","Five Feet And Digging"]
           }
         ]
+      },
+      {
+        "id": 23,
+        "name": "A Rocket To The Moon",
+        "genres": "Rock",
+        "lifeSpan": "2006",
+        "location": "United States",
+        "albums": [
+          {
+            "title": "Your Best Idea",
+            "publicationDate": "2006",
+            "songs": ["54321", "A Song For Brit", "Away Away", "Don't Forget Me",
+              "I Wont Believe This", "I'll Be Back Soon", "I'll Be Your Sunset",
+              "I'm Afraid Of Losing You", "Tempo", "This Is What You Want", "We Feel Like Kings",
+              "You Can Count On Me"]
+          },
+          {
+            "title": "Summer 07 EP",
+            "publicationDate": "2007",
+            "songs": ["Are You Catching My Drift Yet?", "Baby We're Invincible", "Cops And Robbers",
+              "I Think About You Everyday", "The Death Of Me", "If Only They Knew", "Dakota",
+              "I'm Not Saying Goodbye", "Fear Of Flying", "Just Another One"]
+          },
+          {
+            "title": "On Your Side",
+            "publicationDate": "2009",
+            "songs": ["Annabelle", "Mr. Right", "She's Killing Me", "On A Lonely Night", "Dakota",
+              "Life Of The Party", "Like We Used To", "Where Did You Go?", "Sometimes", "Baby Blue Eyes",
+              "Give A Damn"]
+          },
+          {
+            "title": "Not A Second To Waste",
+            "publicationDate": "2009",
+            "songs": ["Not A Second To Waste"]
+          },
+          {
+            "title": "That Old Feeling EP",
+            "publicationDate": "2012",
+            "songs": ["Whole Lotta You", "Going Out", "You're My Song"]
+          },
+        ]
       })
     return this.artistes;
   }
