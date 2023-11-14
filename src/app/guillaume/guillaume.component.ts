@@ -113,12 +113,14 @@ export class GuillaumeComponent implements OnInit, OnDestroy {
 
     const data: { year: string; value: number }[] = [];
 
+    console.log(this.artistesParAnnee)
     for (const year in this.artistesParAnnee) {
-      data.push({year, value: this.artistesParAnnee[year] || 0});
+      if(this.artistesParAnnee[year] !== 0){
+      data.push({year, value: this.artistesParAnnee[year] || 0});}
     }
 
-    const width = 960;
-    const height = 750;
+    const width = 950;
+    const height = 850;
     const inter = (height / 2 - 40)/(filteredArtists.length/2)
     const margin = 10;
     const chartRadius = (height / 2 - 40) ;
@@ -133,20 +135,19 @@ export class GuillaumeComponent implements OnInit, OnDestroy {
 
     const PI = Math.PI,
       arcMinRadius = 10,
-      arcPadding = 10,
+      arcPadding = 8,
       labelPadding = -5,
-      numTicks = 10;
+      numTicks = 35;
 
     let scale = d3.scaleLinear()
       .domain([0, (d3.max(data, d => d.value) || 0) * 1.1])
       .range([0, 2 * PI]);
 
-    let ticks = scale.ticks(numTicks+1).slice(0, -1);
+    let ticks = scale.ticks(numTicks).slice(0, -1);
     const integerTicks = ticks.filter(value => Number.isInteger(value)).sort((a, b) => a - b);
     let keys = data.map((d, i) => d.year);
     const numArcs = keys.length;
     const arcWidth = (chartRadius - arcMinRadius - numArcs * arcPadding) / numArcs;
-
 
     let axeValeur = svg.append('g')
       .attr('class', 'axe valeur')
@@ -177,8 +178,6 @@ export class GuillaumeComponent implements OnInit, OnDestroy {
       .append("g")
       .attr("class", "arc");
 
-    const originalColors: string[] = [];
-
     arcs.append("path")
       .attr("d", (d, i) => {
         const startAngle = 0;
@@ -191,13 +190,14 @@ export class GuillaumeComponent implements OnInit, OnDestroy {
         });
       })
       .style("fill", (d, i) => color(i.toString()))
-      /*.on('mouseover', function (d, i) {
-        const tempColor = d3.select(this).style('fill'); // Stocke la couleur d'origine
-        d3.select(this).style('fill', 'red'); // Change la couleur en rouge
+      .attr('data-original-color', (d,i) => color(i.toString()))
+      .on('mouseover', function () {
+        d3.select(this).style('fill', 'red');
       })
-      .on('mouseout', function (d, i) {
-        d3.select(this).style('fill', originalColors[i]); // Restaure la couleur d'origine
-      })*/
+      .on('mouseout', function () {
+        const originalColor = d3.select(this).attr('data-original-color');
+        d3.select(this).style('fill', originalColor);
+      })
       .on('click', (d) => {
         // Gestionnaire de clic pour l'arc
         const annee = d.srcElement.__data__['year'];
