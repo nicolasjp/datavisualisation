@@ -1,47 +1,53 @@
-<br><br><br>
-<h2>Visualisation du nombre d'artistes qui ont débuté leurs carrières par année</h2>
-<br>
-<!-- FILTRES -->
-<!-- Filtre "Location" sous forme de liste déroulante -->
-<strong><label for="location-filtre">Location : </label></strong>
-<select class="minimal" id="location-filtre" (change)="updateLocationFilter($event)" [(ngModel)]="locationDropdownIndex">
-  <option value="toutes">Toutes les Locations</option>
-  <option value="United States">United States</option>
-  <option value="Belgium">Belgium</option>
-  <option value="Netherlands">Netherlands</option>
-  <option value="Sweden">Sweden</option>
-</select>
-<!-- Filtre "Genre" sous forme de liste déroulante -->
-<strong><label for="genre-filtre">Genre : </label></strong>
-<select class="minimal" id="genre-filtre" (change)="updateGenreFilter($event)" [(ngModel)]="genreDropdownIndex">
-  <option value="tous">Tous les Genres</option>
-  <option value="Classical">Classical</option>
-  <option value="Rock">Rock</option>
-  <option value="Deathcore">Deathcore</option>
-  <option value="Heavy Metal">Heavy Metal</option>
-</select>
-<!-- Bouton pour réinitialiser les filtres -->
-<button id="reinitialiser-filtres-bouton" class="bouton" (click)="resetFilters()">Réinitialiser les Filtres</button>
+<div class="marg">
+  <h2>Visualisation des dates de début de carrières pour l'ensemble des artistes</h2>
+  <h4 class="title">Les années sont rangées dans l'ordre croissant en fonction du nombre d'artiste par année.</h4>
+  <br>
+  <!-- FILTRES -->
+  <!-- Filtre "Location" sous forme de liste déroulante -->
+  <strong><label for="location-filtre">Location : </label></strong>
+  <select class="minimal" id="location-filtre" (change)="updateLocationFilter($event)" [(ngModel)]="locationDropdownIndex">
+    <option value="toutes">Toutes les Locations</option>
+    <option value="United States">United States</option>
+    <option value="Belgium">Belgium</option>
+    <option value="Netherlands">Netherlands</option>
+    <option value="Sweden">Sweden</option>
+    <option value="Germany">Germany</option>
+    <option value="Australia">Australia</option>
+    <option value="England">England</option>
+    <option value="Canada">Canada</option>
+  </select>
+  <!-- Filtre "Genre" sous forme de liste déroulante -->
+  <strong><label for="genre-filtre">Genre : </label></strong>
+  <select class="minimal" id="genre-filtre" (change)="updateGenreFilter($event)" [(ngModel)]="genreDropdownIndex">
+    <option value="tous">Tous les Genres</option>
+    <option value="Classical">Classical</option>
+    <option value="Rock">Rock</option>
+    <option value="Deathcore">Deathcore</option>
+    <option value="Metal">Metal</option>
+    <option value="Pop">Pop</option>
+  </select>
+  <!-- Bouton pour réinitialiser les filtres -->
+  <button id="reinitialiser-filtres-bouton" class="bouton" (click)="resetFilters()">Réinitialiser les Filtres</button>
 
-<!-- GRAPHIQUE D3 -->
-<svg width="800" height="50">
-</svg>
+  <!-- GRAPHIQUE D3 -->
+  <svg class="margil" width="800" height="50"></svg>
 
-<div class="container">
-  <div class="colonne-gauche">
-    <!-- LISTES ARTISTES D'UNE ANNEE -->
-    <table *ngIf="anneeSelected">
-      <thead>
-      <tr>
-        <th>Artiste apparu en {{ anneeSelected }}</th><button class="boutonSuppr" (click)="effacerListe()">Fermer</button>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let artiste of artistesDeCetteAnnee">
-        <td>{{ artiste.name }}</td>
-        <td><button class="boutonDetails" (click)="afficherDetails(artiste)" [routerLink]="['/nicolas', artiste.id]">Détails</button></td>
-      </tr>
-      </tbody>
-    </table>
+  <div class="container">
+    <div class="colonne-gauche">
+      <!-- LISTES ARTISTES D'UNE ANNEE -->
+      <table *ngIf="anneeSelected">
+        <thead>
+        <tr>
+          <th>Artiste apparu en {{ anneeSelected }}</th><button class="boutonSuppr" (click)="effacerListe()">Fermer</button>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let artiste of artistesDeCetteAnnee">
+          <td>{{ artiste.name }}</td>
+          <td><button class="boutonDetails" (click)="afficherDetails(artiste)" [routerLink]="['/nicolas', artiste.id]">Détails</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

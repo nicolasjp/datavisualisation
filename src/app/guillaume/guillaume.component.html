@@ -1,9 +1,60 @@
-<p>guillaume works!</p>
-<p>guillaume works!</p>
-<p>guillaume works!</p>
-<p>guillaume works!</p>
-<p>guillaume works!</p>
-<p>guillaume works!</p>
-<p>guillaume works!</p>
-<p>guillaume works!</p>
-<p>guillaume works!</p>
+<div class="container">
+  <div class="radial-bar-chart-container">
+    <!-- GRAPHIQUE D3 -->
+    <svg width="800" height="50"></svg>
+    <svg id="chart"></svg>
+  </div>
+
+  <div id="arc-tooltip" class="tooltip">Afficher les artistes de cette année</div>
+
+
+  <div class="filters-details-container">
+    <div><br><br>
+      <h2>Visualisation des dates de début de carrières pour l'ensemble des artistes</h2><br>
+      <!-- FILTRES -->
+    <!-- Filtre "Location" sous forme de liste déroulante -->
+    <strong><label for="location-filtre">Location : </label></strong>
+    <select class="minimal" id="location-filtre" (change)="updateLocationFilter($event)" [(ngModel)]="locationDropdownIndex">
+      <option value="toutes">Toutes les Locations</option>
+      <option value="United States">United States</option>
+      <option value="Belgium">Belgium</option>
+      <option value="Netherlands">Netherlands</option>
+      <option value="Sweden">Sweden</option>
+      <option value="Germany">Germany</option>
+      <option value="Australia">Australia</option>
+      <option value="England">England</option>
+      <option value="Canada">Canada</option>
+    </select>
+    <!-- Filtre "Genre" sous forme de liste déroulante -->
+    <strong><label for="genre-filtre">Genre : </label></strong>
+    <select class="minimal" id="genre-filtre" (change)="updateGenreFilter($event)" [(ngModel)]="genreDropdownIndex">
+      <option value="tous">Tous les Genres</option>
+      <option value="Classical">Classical</option>
+      <option value="Rock">Rock</option>
+      <option value="Deathcore">Deathcore</option>
+      <option value="Metal">Metal</option>
+      <option value="Pop">Pop</option>
+    </select>
+    </div>
+    <!-- Bouton pour réinitialiser les filtres -->
+    <div><br><br>
+      <button id="bouton-reset" class="bouton" (click)="resetFilters()">Réinitialiser les Filtres</button>
+    </div>
+    <div class="colonne-gauche">
+      <!-- LISTES ARTISTES D'UNE ANNEE -->
+      <table *ngIf="anneeSelected">
+        <thead>
+        <tr>
+          <td><button class="btn-style1 boutonFermer" (click)="effacerListe()">Fermer</button></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let artiste of artistesDeCetteAnnee">
+          <td>{{ artiste.name }}</td>
+          <td><button class="btn-style2 boutonDetails" (click)="afficherDetails(artiste)" [routerLink]="['/nicolas', artiste.id]">Détails</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
