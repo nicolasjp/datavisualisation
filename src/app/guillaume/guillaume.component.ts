@@ -113,13 +113,14 @@ export class GuillaumeComponent implements OnInit, OnDestroy {
 
     const data: { year: string; value: number }[] = [];
 
+    console.log(this.artistesParAnnee)
     for (const year in this.artistesParAnnee) {
       if(this.artistesParAnnee[year] !== 0){
       data.push({year, value: this.artistesParAnnee[year] || 0});}
     }
 
-    const width = 960;
-    const height = 750;
+    const width = 950;
+    const height = 850;
     const inter = (height / 2 - 40)/(filteredArtists.length/2)
     const margin = 10;
     const chartRadius = (height / 2 - 40) ;
@@ -134,7 +135,7 @@ export class GuillaumeComponent implements OnInit, OnDestroy {
 
     const PI = Math.PI,
       arcMinRadius = 10,
-      arcPadding = 10,
+      arcPadding = 8,
       labelPadding = -5,
       numTicks = 35;
 
