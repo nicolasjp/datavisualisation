@@ -34,9 +34,7 @@
 #reinitialiser-filtres-bouton {
   margin-right: 20px; /* Space between filter elements */
 }
-#bouton-reset{
-  margin-right: 20px;
-  margin-left: 150px}
+
 
 /* Style for the column on the right (list of artists and details) */
 .colonne-gauche {
@@ -57,32 +55,53 @@ table button, .colonne-gauche button {
 }
 
 /* Add any other existing CSS styles below */
-
-.bouton {
-  background-color: #719fee;
-  border-radius: 10px;
-  border: 4px double #1f69ec;
-  color: #ffffff;
-  text-align: center;
-  font-size: 15px;
-  padding: 10px;
-  width: 180px;
-  margin-top: -2em;
+#bouton-reset {
+  font-size: inherit;
   cursor: pointer;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
+  padding: 18px 150px;
+  display: block;
+  margin: 0 auto;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  border-radius: 50px;
+  color: #fff;
+  overflow: hidden;
+  background: #25221e;
 }
 
-.bouton:hover {
-  background-color: #fafbfc;
-  border: 2px solid #1f69ec;
-  box-shadow: 10px 5px 5px #719fee;
-  color: #1f69ec;
-  text-align: center;
-  font-size: 16px;
+#bouton-reset:after {
+  width: 200px;
+  height: 30px;
+  background: rgba(255,255,255,0.3);
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -50px;
+  transition: all 0.5s ease !important;
 }
+
+#bouton-reset:hover:after {
+  top: 50%;
+  left: 500px;
+}
+
+#bouton-reset:hover {
+  box-shadow: 0 20px 38px rgba(0, 0, 0, 0.16);
+  transform: translateY(-3px);
+  background: #35312c;
+}
+
+#bouton-reset:active {
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.16);
+  transform: translateY(-1px);
+  background: #000;
+}
+
 
 select {
   /* styling */
@@ -160,26 +179,126 @@ select.minimal:focus {
   font-size: 16px;
 }
 
-.boutonDetails {
-  background-color: #719fee;
-  border-radius: 10px;
-  border: 4px double #1f69ec;
-  color: #ffffff;
-  text-align: center;
-  font-size: 15px;
-  width: 70px;
+#bouton-reset {
+  font-size: inherit;
   cursor: pointer;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
+  padding: 18px 80px;
+  display: inline-block;
+  margin: 15px 0px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  border-radius: 50px;
+  color: #fff;
+  overflow: hidden;
+  background: #25221e;
 }
 
-.boutonDetails:hover {
-  background-color: #fafbfc;
-  border: 2px solid #1f69ec;
-  box-shadow: 10px 5px 5px #719fee;
-  color: #1f69ec;
-  text-align: center;
-  font-size: 16px;
+#bouton-reset:after {
+  width: 200px;
+  height: 30px;
+  background: rgba(255,255,255,0.3);
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -50px;
+  transition: all 0.5s ease !important;
+}
+
+#bouton-reset:hover:after {
+  top: 50%;
+  left: 500px;
+}
+
+#bouton-reset:hover {
+  box-shadow: 0 20px 38px rgba(0, 0, 0, 0.16);
+  transform: translateY(-3px);
+  background: #35312c;
+}
+
+#bouton-reset:active {
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.16);
+  transform: translateY(-1px);
+  background: #000;
+}
+.btn-style2 {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 8px 45px;
+  display: inline-block;
+  margin: 15px 0px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  outline: none;
+  position: relative;
+  transition: all 0.2s;
+  border-radius: 50px;
+  border: 3px solid #000;
+  color: #000;
+  overflow: hidden;
+}
+
+.btn-style2:before {
+  left: 130%;
+  top: -4px;
+  position: absolute;
+  height: 100%;
+  font-size: 125%;
+  line-height: 3.5;
+  transition: all 0.2s;
+  font-family: FontAwesome;
+  content: "\f178";
+}
+
+.btn-style2:hover {
+  border-color: #000;
+  color: #000;
+  background: #fff;
+}
+
+.btn-style2:active {
+  transition: all 0s;
+  background: #000;
+  color: #fff;
+}
+
+.btn-style2:hover:before {
+  left: 85%;
+}
+
+.btn-style1 {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 15px 70px;
+  display: inline-block;
+  margin: 15px 0px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  transition: none;
+  background: #ffb001;
+  color: #fff;
+  box-shadow: 0 6px #df9c0a;
+  border-radius: 100px;
+}
+
+.btn-style1:hover {
+  box-shadow: 0 4px #c68b08;
+  top: 2px;
+}
+
+.btn-style1:active {
+  background: #f0a809;
+  box-shadow: 0 0 #df9c0a;
+  top: 6px;
 }
