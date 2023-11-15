@@ -22,7 +22,6 @@
     <option value="tous">Tous les Genres</option>
     <option value="Classical">Classical</option>
     <option value="Rock">Rock</option>
-    <option value="Deathcore">Deathcore</option>
     <option value="Metal">Metal</option>
     <option value="Pop">Pop</option>
   </select>
@@ -38,7 +37,7 @@
       <table *ngIf="anneeSelected">
         <thead>
         <tr>
-          <th>Artiste apparu en {{ anneeSelected }}</th><button class="boutonSuppr" (click)="effacerListe()">Fermer</button>
+          <th>Artiste apparu en {{ anneeSelected }} : {{numberParAnnee}}</th><button class="boutonSuppr" (click)="effacerListe()">Fermer</button>
         </tr>
         </thead>
         <tbody>

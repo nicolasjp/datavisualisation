@@ -2512,6 +2512,995 @@ export class ArtistesService {
             ]
           }
         ]
+      },
+      {
+        "id": 71,
+        "name": "A La Carte",
+        "genres": "Disco",
+        "lifeSpan": "1978",
+        "location": "Germany",
+        "albums": [
+          {
+            "title": "Other Songs",
+            "publicationDate": "1979",
+            "songs": [
+              "Doctor, Doctor (Help Me Please)",
+              "In The Summer Sun Greece",
+              "River Blues",
+              "When The Boys Come Home",
+              "You Get Me On The Run",
+              "Ahe Tamoure",
+              "Have You Forgotten",
+              "In The Summer Sun Of Greece",
+              "River Blue",
+              "Viva Torero",
+              "You Get Me On The Rund"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 72,
+        "name": "A Klana Indiana",
+        "genres": "Disco",
+        "lifeSpan": "1998",
+        "location": "Austria",
+        "albums": [
+          {
+            "title": "Jetzt Muss Es Raus",
+            "publicationDate": "1999",
+            "songs": [
+              "Intro",
+              "Call Me Indiana",
+              "Mei Squaw Wü' 6 Mal Jede Nacht",
+              "Twist No. Sex",
+              "10 Klane Indiana",
+              "Uiii, Is Des Bled !",
+              "Du Da!",
+              "Zicke Zacke",
+              "7 Klane Indiana",
+              "A Klana Indiana",
+              "Indiana - Medley",
+              "4 Klane Indiana",
+              "Jeronimo",
+              "Twist No. Sex-Remix",
+              "Indiana Ehrenwort"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 73,
+        "name": "A Lesson Learned",
+        "genres": "Rock",
+        "lifeSpan": "2012",
+        "location": "United States",
+        "albums": [
+          {
+            "title": "Other Songs",
+            "publicationDate": "2012",
+            "songs": [
+              "Im Blue A Ba Di A Ba Die"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 74,
+        "name": "A Legend Falls",
+        "genres": "",
+        "lifeSpan": "2003",
+        "location": "England",
+        "albums": [
+          {
+            "title": "Chaos Becomes Us",
+            "publicationDate": "2003",
+            "songs": [
+              "Post-Mortem Pre-Ævum",
+              "The Voice Inside",
+              "The Lesser Of Evil",
+              "Elegy To Empathy",
+              "And As The Sun Stills...",
+              "Never",
+              "Sullen",
+              "Chaos Becomes Us",
+              "Abhorrent Ascent",
+              "Requiem For The Masses"
+            ]
+          },
+          {
+            "title": "Analyzing Tactics Of The Morally Dead & Dying",
+            "publicationDate": "2005",
+            "songs": [
+              "Opus No. 17",
+              "Progeny & Poltergeist",
+              "Opus No. 16",
+              "The Ominous",
+              "Opus No. 20",
+              "A Separation Of Sentiments",
+              "Opus No. 19",
+              "Of Treachery And Romance",
+              "Form Of Kypris",
+              "Childern Of Lilth"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 75,
+        "name": "A Liar Wrote This Symphony",
+        "genres": "",
+        "lifeSpan": "",
+        "location": "",
+        "albums": [
+          {
+            "title": "Other Songs",
+            "publicationDate": "",
+            "songs": [
+              "What Shade We Make"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 76,
+        "name": "A Life In Vain",
+        "genres": "Metal",
+        "lifeSpan": "2003",
+        "location": "Norway",
+        "albums": [
+          {
+            "title": "Other Songs",
+            "publicationDate": "2003",
+            "songs": [
+              "This Isn't A Funeral"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 77,
+        "name": "A Life Like This",
+        "genres": "",
+        "lifeSpan": "",
+        "location": "",
+        "albums": [
+          {
+            "title": "Other Songs",
+            "publicationDate": "",
+            "songs": [
+              "Daybreak",
+              "This Song Could Save Us",
+              "So It's Solitaire"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 78,
+        "name": "A Life Divided",
+        "genres": "Rock",
+        "lifeSpan": "2003",
+        "location": "Germany",
+        "albums": [
+          {
+            "title": "Virtualized",
+            "publicationDate": "2003",
+            "songs": [
+              "Criticize",
+              "I Am God",
+              "Virtualized",
+              "Static",
+              "Somebody",
+              "Ignorance",
+              "Pieces",
+              "Breathe",
+              "Unlike",
+              "Sounds Like A Melody",
+              "Heaven",
+              "No World Order",
+              "Only Night"
+            ]
+          },
+          {
+            "title": "Far",
+            "publicationDate": "2006",
+            "songs": [
+              "Anyone",
+              "Isolation",
+              "Some Kind Of Grey",
+              "Hand Of Healing",
+              "The Ordinary",
+              "Solid",
+              "Tools Of A Freakness",
+              "Friends",
+              "So Far To Go",
+              "Leaving",
+              "Free",
+              "I Hope You'll Make It To The West",
+              "The Persistence Of Memory",
+              "Matter Of Sight",
+              "Cry For Help"
+            ]
+          },
+          {
+            "title": "Passenger",
+            "publicationDate": "2011",
+            "songs": [
+              "Heart On Fire",
+              "Forever",
+              "Anyone",
+              "Words",
+              "Hey You",
+              "Doesn't Count",
+              "Save Me",
+              "Other Side",
+              "Sounds Like A Melody",
+              "Change",
+              "The End"
+            ]
+          },
+          {
+            "title": "The Great Escape",
+            "publicationDate": "2013",
+            "songs": [
+              "The Lost",
+              "It Ain't Good",
+              "Clouds Of Glass",
+              "The Last Dance",
+              "Game Over",
+              "Feel",
+              "Perfect Day",
+              "Foreign Rain",
+              "Wait For Me",
+              "Goodbye",
+              "On The Edge",
+              "Space",
+              "If You Want To",
+              "The Last Dance",
+              "Ever Changing World",
+              "It's Alright",
+              "Perpetual",
+              "The Way",
+              "Everything Is Anything",
+              "Always On My Mind",
+              "Feel"
+            ]
+          },
+          {
+            "title": "Human",
+            "publicationDate": "2015",
+            "songs": [
+              "Burst",
+              "The Most Beautiful Black",
+              "Inside Me",
+              "Own Mistake",
+              "Right Where I Belong",
+              "Could You",
+              "Drive",
+              "My Apology",
+              "Believe",
+              "Lay Me Down",
+              "Happy End"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 79,
+        "name": "A Lost Cause",
+        "genres": "",
+        "lifeSpan": "1997",
+        "location": "United States",
+        "albums": [
+          {
+            "title": "Other Songs",
+            "publicationDate": "1997",
+            "songs": [
+              "April 7",
+              "Sally",
+              "I'm Not A Kid"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 80,
+        "name": "A Lost People",
+        "genres": "",
+        "lifeSpan": "",
+        "location": "",
+        "albums": [
+          {
+            "title": "Other Songs",
+            "publicationDate": "",
+            "songs": [
+              "Big Booty Bitches"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 81,
+        "name": "A Loss For Words",
+        "genres": "Rock",
+        "lifeSpan": "1999",
+        "location": "Boston",
+        "albums": [
+          {
+            "title": "These Past 5 Years",
+            "publicationDate": "2005",
+            "songs": [
+              "Introduction",
+              "A Theme For Your Ego",
+              "Bullets Leave Holes",
+              "Hot Hand In A Dice Game",
+              "Death Or Glory",
+              "Shoot For Seven",
+              "Kill With Style"
+            ]
+          },
+          {
+            "title": "Webster Lake",
+            "publicationDate": "2008",
+            "songs": [
+              "All Roads Lead Home",
+              "Face To Face",
+              "Wrightsville Beach",
+              "Highway 24 Revisited",
+              "It's Good To Be Back In Eastern Standard"
+            ]
+          },
+          {
+            "title": "The Kids Can't Lose",
+            "publicationDate": "2009",
+            "songs": [
+              "Stamp Of Approval",
+              "40 Thieves",
+              "Where I'm From, You Die With Your Secrets",
+              "Hold Your Breath",
+              "Mt. St. Joseph",
+              "The Promises You Keep (Burn This Bridge)",
+              "Heavy Lies The Crown",
+              "Wasted Youth",
+              "Half Step Down",
+              "Behind Our Backs",
+              "Hot Hand In A Dice Game"
+            ]
+          },
+          {
+            "title": "Motown Classics",
+            "publicationDate": "2010",
+            "songs": [
+              "All Night Long",
+              "Do You Love Me",
+              "I Just Called To Say I Love You",
+              "I Want You Back",
+              "My Girl",
+              "Reach Out (I'll Be There)",
+              "Tears Of A Clown",
+              "This Old Heart Of Mine",
+              "What's Goin On",
+              "You Can't Hurry Love"
+            ]
+          },
+          {
+            "title": "No Sanctuary",
+            "publicationDate": "2011",
+            "songs": [
+              "Honeymoon Eyes",
+              "Pray for Rain",
+              "Pirouette",
+              "Raining Excuses",
+              "The Hammers Fall",
+              "The Lost Cause I Used to Be",
+              "No Sanctuary",
+              "JMR",
+              "Jetsetter",
+              "Finite",
+              "Wrightsville Beach"
+            ]
+          },
+          {
+            "title": "Other Songs",
+            "publicationDate": "",
+            "songs": [
+              "Broke Don't Fix",
+              "My Blood Is Too Thick For Nevada",
+              "Overflow"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 82,
+        "name": "A Media Tea",
+        "genres": "Rock",
+        "lifeSpan": "1990",
+        "location": "Canadian",
+        "albums": [
+          {
+            "title": "Con Uñas Y Dientes",
+            "publicationDate": "2011",
+            "songs": [
+              "Sin Trampa Ni Cartón",
+              "Dame Más",
+              "A Un Nombre De Cuento",
+              "Huye Conmigo",
+              "Un Último Paseo",
+              "Comienza La Cuenta Atrás",
+              "Insaciable",
+              "Aroma De Bar",
+              "A Pelo",
+              "A-4"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 83,
+        "name": "A Love Like Pi",
+        "genres": "Rock",
+        "lifeSpan": "2006",
+        "location": "United States",
+        "albums": [
+          {
+            "title": "The Atlas And The Oyster",
+            "publicationDate": "2009",
+            "songs": [
+              "The Oyster",
+              "Honesty",
+              "Atlas",
+              "Innocent Man",
+              "Oh, Everything",
+              "Take It Back",
+              "A Merry Cain",
+              "All You Do With Guilt, Iscariot",
+              "My Body",
+              "Young Men",
+              "Oh Lolita",
+              "The Piper"
+            ]
+          },
+          {
+            "title": "Other Songs",
+            "publicationDate": "2008",
+            "songs": [
+              "Broken Hands",
+              "I Am A Soldier",
+              "It's Not An Embrace When Your Arms Are Nailed Open",
+              "Keep My Lovers True"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 84,
+        "name": "A Million Engines In Neutral",
+        "genres": "",
+        "lifeSpan": "1995",
+        "location": "",
+        "albums": [
+          {
+            "title": "Other Songs",
+            "publicationDate": "",
+            "songs": [
+              "Big City Go Easy",
+              "Travis Bickle",
+              "The Bottom Of A Charcoal Grill",
+              "Bigger Brushes, Brighter Colors"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 85,
+        "name": "A Million Dead Birds Laughing",
+        "genres": "",
+        "lifeSpan": "2011",
+        "location": "Australia",
+        "albums": [
+          {
+            "title": "Force Fed Enlightenment",
+            "publicationDate": "2011",
+            "songs": ["Purpose","Defiants","Conduit","161"]
+          },
+          {
+            "title": "Xen",
+            "publicationDate": "2012",
+            "songs": ["Zombie","King","Quantum","Goliath"]
+          }
+        ]
+      },
+      {
+        "id": 86,
+        "name": "A Million Kittens, Inc",
+        "genres": "Rock",
+        "lifeSpan": "1998",
+        "location": "England",
+        "albums": [
+          {
+            "title": "Other Songs",
+            "publicationDate": "",
+            "songs": [
+              "A Maze Of Graves",
+              "Johnnie Walker, Texas Ranger",
+              "The Bothered Son And Phony Ghost",
+              "Six Months For A Sick Drunk",
+              "One Day All This Will Be Yours",
+              "The Next Voice You Hear",
+              "The Inaccurate Conception",
+              "What An Ordeal",
+              "Sharpen The Cutlass"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 87,
+        "name": "A Moment Spent",
+        "genres": "",
+        "lifeSpan": "",
+        "location": "",
+        "albums": [
+          {
+            "title": "Other Songs",
+            "publicationDate": "",
+            "songs": [
+              "Smothered Flames",
+              "Grand Scheme",
+              "Sequels & Songwriters"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 88,
+        "name": "A Long Winter",
+        "genres": "Rock",
+        "lifeSpan": "1988",
+        "location": "United States",
+        "albums": [
+          {
+            "title": "Breathing Underwater",
+            "publicationDate": "2000",
+            "songs": [
+              "Too Far To Fly",
+              "Portraits Hung In Empty Halls",
+              "These Eyes Will Remember",
+              "Just One Kiss"
+            ]
+          },
+          {
+            "title": "I'm So Bad With Goodbyes...",
+            "publicationDate": "2002",
+            "songs": [
+              "Razel Got Her Wings",
+              "She's Gone But Her Ghost Still Haunts Me",
+              "Her Delicate Yearning",
+              "The Boy From Judecca",
+              "If Everything Ends, Please Don't Leave Me",
+              "What Runs Through",
+              "Juliet",
+              "The Summers Seem Like Days, And The Days Seem Like Seconds"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 89,
+        "name": "A Minute Till Midnight",
+        "genres": "Metal",
+        "lifeSpan": "2007",
+        "location": "United States",
+        "albums": [
+          {
+            "title": "Other Songs",
+            "publicationDate": "2007",
+            "songs": [
+              "Crown Tipping",
+              "Silence The Dreamer",
+              "Carrier Pigeons",
+              "Bullet Belt Disco"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 90,
+        "name": "A Minute To Pray A Second To Die",
+        "genres": "Punk",
+        "lifeSpan": "1981",
+        "location": "United States",
+        "albums": [
+          {
+            "title": "Other Songs",
+            "publicationDate": "1981",
+            "songs": [
+              "8688",
+              "Yamaha Potato Head",
+              "Doomsday (The Fall From Grace)",
+              "Die Hard"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 91,
+        "name": "A Murder Of Crows",
+        "genres": "",
+        "lifeSpan": "2003",
+        "location": "Metal",
+        "albums": [
+          {
+            "title": "Genesis",
+            "publicationDate": "2004",
+            "songs": [
+              "Great White Balls Of Fire",
+              "Assassinations And Conversations",
+              "I'm An Expert In Nameology",
+              "Consequences Of Trying To Have A Relationship With A Crackhead",
+              "Jack Bauer",
+              "The Path Of Rust"
+            ]
+          },
+          {
+            "title": "Other Songs",
+            "publicationDate": "",
+            "songs": [
+              "Coraliza"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 92,
+        "name": "A New Kind Of American Saint",
+        "genres": "Rock",
+        "lifeSpan": "2000",
+        "location": "United States",
+        "albums": [
+          {
+            "title": "Other Songs",
+            "publicationDate": "",
+            "songs": [
+              "There's Only One Rule In This Town (A.K.A. Knock Knock Knockin'...",
+              "Jesus Wasn't Straightedge, But I Am",
+              "If It Ain't Shit...It Ain't Shit",
+              "Don't Let These Tight Pants Fool You, I'm All Heart Motherfucker"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 93,
+        "name": "A New Challenger Approaches",
+        "genres": "",
+        "lifeSpan": "2014",
+        "location": "United States",
+        "albums": [
+          {
+            "title": "Dead Inside",
+            "publicationDate": "2014",
+            "songs": [
+              "Dead Inside",
+              "Charon",
+              "Obsidian Empire",
+              "The Red Scarf",
+              "Fenrir",
+              "Pray To The Sharks",
+              "Ellie"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 94,
+        "name": "A Night In Texas",
+        "genres": "Metal",
+        "lifeSpan": "2009",
+        "location": "Australian",
+        "albums": [
+          {
+            "title": "Invigoration",
+            "publicationDate": "2013",
+            "songs": [
+              "Invigoration",
+              "Throne Of Flies",
+              "Orphan Of Humanity",
+              "Human Castle",
+              "Defaming The Omega"
+            ]
+          },
+          {
+            "title": "The God Delusion",
+            "publicationDate": "2015",
+            "songs": [
+              "The God Delusion",
+              "Satan's Upheaval",
+              "Throne Of Flies II",
+              "Apostasy",
+              "I, Godless",
+              "Heathen",
+              "The Priest Of Lechery",
+              "Death Scripture",
+              "The River Of Pain"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 95,
+        "name": "A New January",
+        "genres": "Electro",
+        "lifeSpan": "1996",
+        "location": "United States",
+        "albums": [
+          {
+            "title": "Patchwork Shadows",
+            "publicationDate": "1996",
+            "songs": [
+              "Change",
+              "Babble",
+              "Last Time",
+              "Loss",
+              "Hidden",
+              "Bleed",
+              "Sweet Enough To Steal",
+              "Shallow Expectations",
+              "Witchling",
+              "On The Edge",
+              "Subtract",
+              "Cream"
+            ]
+          },
+          {
+            "title": "After Clothes",
+            "publicationDate": "1998",
+            "songs": [
+              "After Clothes",
+              "Partially Unbroken",
+              "After Clothes",
+              "Shallow Expectations",
+              "After Clothes",
+              "Virtues",
+              "Green",
+              "After Clothes",
+              "Forever In A Day"
+            ]
+          },
+          {
+            "title": "Cold And Naked",
+            "publicationDate": "2003",
+            "songs": [
+              "Take It From Me",
+              "Worlds Are Breaking Down",
+              "Tisiver Ssol",
+              "Flicker",
+              "Jaded",
+              "Shape Your Tongue",
+              "Uncreate",
+              "Drown",
+              "Just Like Heaven",
+              "Pushing (Way Too Hard)",
+              "Tooms",
+              "Imbroglio",
+              "Next To Nothing",
+              "Transparent",
+              "Take It From Me"
+            ]
+          },
+          {
+            "title": "Self-Medicate",
+            "publicationDate": "2007",
+            "songs": [
+              "Heartburst",
+              "Waited So Long",
+              "Suffer Stains",
+              "The Matter",
+              "Wrapped In Cellophane",
+              "Outburn",
+              "When You Fall",
+              "Blasphemous Rumours"
+            ]
+          },
+          {
+            "title": "Compilation Appearances",
+            "publicationDate": "",
+            "songs": [
+              "It Happens All The Time"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 96,
+        "name": "A Novel Form",
+        "genres": "",
+        "lifeSpan": "2006",
+        "location": "United States",
+        "albums": [
+          {
+            "title": "Other Songs",
+            "publicationDate": "2006",
+            "songs": [
+              "Fake It Face It",
+              "Kiss And Tell",
+              "Isint That You Wrapped Around Him"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 97,
+        "name": "A Petty Pensieve",
+        "genres": "",
+        "lifeSpan": "1995",
+        "location": "Germany",
+        "albums": [
+          {
+            "title": "Other Songs",
+            "publicationDate": "1995",
+            "songs": [
+              "Gone",
+              "Of Dreams And Stars",
+              "Harry Don't You See"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 98,
+        "name": "A Place Called Here",
+        "genres": "",
+        "lifeSpan": "2000",
+        "location": "United States",
+        "albums": [
+          {
+            "title": "Other Songs",
+            "publicationDate": "2000",
+            "songs": [
+              "Rise Above The Streetlights",
+              "The Dawn Of The White Whore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 99,
+        "name": "A Perfect Kiss",
+        "genres": "",
+        "lifeSpan": "2002",
+        "location": "United States",
+        "albums": [
+          {
+            "title": "In Spite Of Angels",
+            "publicationDate": "2002",
+            "songs": [
+              "Seven And A Half Years Of Waiting",
+              "My Disaster",
+              "Song",
+              "Night",
+              "Supernatural Superglue",
+              "Briana",
+              "Angels",
+              "Fading",
+              "The Dream Is Over",
+              "In Spite Of My Angel",
+              "End Of An Error",
+              "A Drop Of Water To Cool My Tongue"
+            ]
+          },
+          {
+            "title": "The Olympians",
+            "publicationDate": "2006",
+            "songs": [
+              "Bottom Of The Sunrise",
+              "A Memory Less Traveled",
+              "D-Up! (In Chapel Hill)",
+              "The Medication",
+              "The End Wasted",
+              "Idiot Penguin",
+              "Ardent Decay",
+              "Disquiet",
+              "Ashes (Of My Pajama Pants)",
+              "Once = Always?"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 100,
+        "name": "A Pink",
+        "genres": "Pop",
+        "lifeSpan": "2011",
+        "location": "South Korea",
+        "albums": [
+          {
+            "title": "Seven Springs Of Apink",
+            "publicationDate": "2011",
+            "songs": [
+              "Seven Springs Of Apink",
+              "몰라요",
+              "It Girl",
+              "Wishlist",
+              "Boo"
+            ]
+          },
+          {
+            "title": "Une Annee",
+            "publicationDate": "2012",
+            "songs": [
+              "Une Annee",
+              "Hush",
+              "고양이",
+              "4월 19일",
+              "Bubibu",
+              "Step",
+              "Boy",
+              "I Got You",
+              "하늘 높이"
+            ]
+          },
+          {
+            "title": "Secret Garden",
+            "publicationDate": "2013",
+            "songs": [
+              "U You",
+              "No No No",
+              "Lovely Day",
+              "난 니가 필요해",
+              "Secret Garden"
+            ]
+          },
+          {
+            "title": "Pink Blossom",
+            "publicationDate": "2014",
+            "songs": [
+              "Sunday Mpnday",
+              "Mr Chu",
+              "사랑동화",
+              "So Long"
+            ]
+          },
+          {
+            "title": "Pink Luv",
+            "publicationDate": "2014",
+            "songs": [
+              "LUV",
+              "Wanna Be",
+              "Secret",
+              "천사가 아냐",
+              "동화 같은 사랑",
+              "Good Morning Baby",
+              "My Darling"
+            ]
+          },
+          {
+            "title": "Pink Memory",
+            "publicationDate": "2015",
+            "songs": [
+              "Remember",
+              "Perfume",
+              "끌려",
+              "Dejavu",
+              "꽃잎점",
+              "What A Boy Wants",
+              "I DO",
+              "신기하죠",
+              "Remember (Instr.)",
+              "새끼손가락"
+            ]
+          },
+          {
+            "title": "Other Songs",
+            "publicationDate": "",
+            "songs": [
+              "No No No (Japanese Version)",
+              "Mr Chu (Japanese Version)"
+            ]
+          }
+        ]
       })
     return this.artistes;
   }

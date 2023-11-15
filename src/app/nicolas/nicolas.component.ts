@@ -21,6 +21,7 @@ export class NicolasComponent implements OnInit, OnDestroy {
   anneeSelected: string = "";
   axeAnnee: string[] = [];
   axeValues: number[] = [];
+  numberParAnnee: number = 0;
 
   constructor(private artistesService: ArtistesService) {
   }
@@ -110,6 +111,7 @@ export class NicolasComponent implements OnInit, OnDestroy {
       }
     });
 
+
     // Convertir l'objet de paires clé-valeur en un tableau d'objets
     const artistesParAnneeArray = Object.keys(this.artistesParAnnee).map(annee => ({
       annee: annee,
@@ -128,7 +130,7 @@ export class NicolasComponent implements OnInit, OnDestroy {
     })
 
     // 4. Utiliser D3.js pour créer le graphique à barres
-    const largeurGraphique = 800;
+    const largeurGraphique = 900;
     const hauteurGraphique = 400;
     const marge = { haut: 20, droite: 20, bas: 40, gauche: 40 };
 
@@ -149,7 +151,7 @@ export class NicolasComponent implements OnInit, OnDestroy {
     const x = d3.scaleBand()
       .domain(this.axeAnnee)
       .range([0, largeur])
-      .padding(0.1);
+      .padding(0.25);
 
     const artistesParAnneeValues = this.axeValues
       .filter(val => val !== undefined && val.toString() !== "")
@@ -169,7 +171,7 @@ export class NicolasComponent implements OnInit, OnDestroy {
     const xScale = d3.scaleBand()
       .domain(this.axeAnnee.map(annee => annee.toString()))
       .range([0, largeur])
-      .padding(0.1);
+      .padding(0.25);
 
     const colors = d3.scaleOrdinal(d3.schemeCategory10);
     const heights = Object.values(this.artistesParAnnee).map(Number); // Obtenez les hauteurs des barres
@@ -223,6 +225,7 @@ export class NicolasComponent implements OnInit, OnDestroy {
 
         // Stockez les artistes de cette année dans une variable de votre composant
         this.artistesDeCetteAnnee = artistesDeCetteAnnee;
+        this.numberParAnnee = this.artistesDeCetteAnnee.length;
       });
 
 
