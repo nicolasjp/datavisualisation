@@ -128,14 +128,22 @@ export class YohanComponent implements OnInit, OnDestroy {
       .attr('stroke-width', '0px');
 
     graphique.selectAll('.tick text')
-      .attr('dy', '-3em')
-      .style('font-size', '15px')
+      .attr('dy', '-3.5em')
+      .style('font-size', '10px')
       .style("font-family", "OCR A Std, monospace")
       .style("opacity", "0.5")
       .style("font-weight", "bold");
 
-
     const anneesAvecArtistes = Object.entries(this.artistesParAnnee).filter(entry => entry[1].length > 0);
+
+    graphique.selectAll('.tick').each(function(d) {
+      if (d instanceof Date) {
+        const yearString = d.getFullYear().toString();
+        if (!anneesAvecArtistes.find(entry => entry[0] === yearString)) {
+          d3.select(this).select('text').style('opacity', '0');
+        }
+      }
+    });
 
     interface DataEntry {
       0: string; // pour l'année, si c'est une chaîne de caractères
@@ -143,7 +151,7 @@ export class YohanComponent implements OnInit, OnDestroy {
     }
 
     function calculateRadius(d: DataEntry) {
-      return 10 + (d[1].length - 1);
+      return 10 + (d[1].length);
     }
 
     graphique.selectAll()
@@ -164,7 +172,7 @@ export class YohanComponent implements OnInit, OnDestroy {
         const dataEntry = d as DataEntry;
         d3.select(this)
           .transition()
-          .duration(250) 
+          .duration(250)
           .attr('fill', 'red')
           .attr('r', calculateRadius(dataEntry) + 5);
       })
@@ -174,7 +182,7 @@ export class YohanComponent implements OnInit, OnDestroy {
           .transition()
           .duration(250)
           .attr('fill', 'orange')
-          .attr('r', calculateRadius(dataEntry)); 
+          .attr('r', calculateRadius(dataEntry));
       })
       .on('click', (d) => {
         const annee = d.srcElement.__data__[0];
