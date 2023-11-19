@@ -597,7 +597,7 @@ export class ArtistesService {
         "name": "A Camp",
         "genres": "Pop",
         "lifeSpan": "2001",
-        "location": "New York",
+        "location": "United States",
         "albums": [
           {
             "title": "A Camp",
@@ -1736,9 +1736,9 @@ export class ArtistesService {
       {
         "id": 50,
         "name": "A Flock Of Seagulls",
-        "genres": "Punk",
+        "genres": "Hardcore",
         "lifeSpan": "1980",
-        "location": "United Kingdom",
+        "location": "England",
         "albums": [
           {
             "title": "Modern Love Is Automatic",
@@ -1875,7 +1875,7 @@ export class ArtistesService {
         "name": "A Genuine Freakshow",
         "genres": "Pop",
         "lifeSpan": "2005",
-        "location": "United Kingdom",
+        "location": "England",
         "albums": [
           {
             "title": "Other Songs",
@@ -2138,7 +2138,7 @@ export class ArtistesService {
         "name": "A Guy Called Gerald",
         "genres": "",
         "lifeSpan": "1967",
-        "location": "United Kingdom",
+        "location": "England",
         "albums": [
           {
             "title": "Other Songs",
@@ -2825,7 +2825,7 @@ export class ArtistesService {
         "name": "A Loss For Words",
         "genres": "Rock",
         "lifeSpan": "1999",
-        "location": "Boston",
+        "location": "United States",
         "albums": [
           {
             "title": "These Past 5 Years",
@@ -2917,7 +2917,7 @@ export class ArtistesService {
         "name": "A Media Tea",
         "genres": "Rock",
         "lifeSpan": "1990",
-        "location": "Canadian",
+        "location": "Canada",
         "albums": [
           {
             "title": "Con Uñas Y Dientes",
@@ -3199,7 +3199,7 @@ export class ArtistesService {
         "name": "A Night In Texas",
         "genres": "Metal",
         "lifeSpan": "2009",
-        "location": "Australian",
+        "location": "Australia",
         "albums": [
           {
             "title": "Invigoration",
