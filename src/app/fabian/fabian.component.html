@@ -1,9 +1,76 @@
-<br><br><br>
-<h2>Visualisation du nombre d'artistes  par année</h2>
-<br>
+<div class="marg">
+  <h2>Visualisation des dates de sorties des albums pour l'ensemble des artistes</h2>
+  <!-- FILTRES -->
+  <!-- Filtre "Location" sous forme de liste déroulante -->
+  <strong><label for="location-filtre">Location : </label></strong>
+  <select class="minimal" id="location-filtre" (change)="updateLocationFilter($event)" [(ngModel)]="locationDropdownIndex">
+    <option value="toutes">Toutes les Locations</option>
+    <option value="United States">United States</option>
+    <option value="Belgium">Belgium</option>
+    <option value="Netherlands">Netherlands</option>
+    <option value="Sweden">Sweden</option>
+    <option value="Germany">Germany</option>
+    <option value="Australia">Australia</option>
+    <option value="England">England</option>
+    <option value="Canada">Canada</option>
+    <option value="Japan">Japan</option>
+    <option value="Norway">Norway</option>
+    <option value="Brazil">Brazil</option>
+    <option value="Switzerland">Switzerland</option>
+    <option value="Denmark">Denmark</option>
+    <option value="Ireland">Ireland</option>
+    <option value="Austria">Austria</option>
+    <option value="South Korea">South Korea</option>
+  </select>
+  <!-- Filtre "Genre" sous forme de liste déroulante -->
+  <strong><label for="genre-filtre">Genre : </label></strong>
+  <select class="minimal" id="genre-filtre" (change)="updateGenreFilter($event)" [(ngModel)]="genreDropdownIndex">
+    <option value="tous">Tous les Genres</option>
+    <option value="Classical">Classical</option>
+    <option value="Rock">Rock</option>
+    <option value="Metal">Metal</option>
+    <option value="Pop">Pop</option>
+    <option value="Electro">Electro</option>
+    <option value="Indé">Indé</option>
+    <option value="Hardcore">Hardcore</option>
+    <option value="Jazz">Jazz</option>
+    <option value="Disco">Disco</option>
+  </select>
+  <!-- Bouton pour réinitialiser les filtres -->
+  <button id="reinitialiser-filtres-bouton" type="button" class="fill"  (click)="resetFilters()">Réinitialiser les Filtres</button>
 
-<!-- GRAPHIQUE D3 -->
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<svg width="500" height="400"></svg>
+  <svg class="margil" width="800" height="50"></svg>
 
-
+  <!-- GRAPHIQUE D3 -->
+  <div class="container">
+    <div class="colonne-gauche">
+      <!-- GRAPHIQUE D3 -->
+      <table *ngIf="albumDetails" class="album-details">
+        <thead>
+        <tr>
+          <th>Détails des albums de l'année {{ anneeSelected }}</th>
+        </tr>
+        </thead>
+        <ul>
+          <li *ngFor="let album of albumDetails">
+            <ng-container *ngIf="album.title === 'Other Songs'">
+              Other Songs: {{ album.artistName }}
+            </ng-container>
+            <ng-container *ngIf="album.title !== 'Other Songs'">
+              {{ album.title }}
+            </ng-container>
+            <button type="button" class="fill" (click)="showAlbumDetails(album)">Détails</button>
+            <div *ngIf="album.showDetails">
+              <p><strong>Titre de l'album:</strong> {{ album.title }}</p>
+              <p><strong>Nom de l'artiste:</strong> {{ album.artistName }}</p>
+              <p><strong>Songs:</strong>
+              <ul>
+                <li *ngFor="let song of album.allSongs">{{ song }}</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </table>
+    </div>
+  </div>
+</div>

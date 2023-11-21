@@ -10,7 +10,7 @@ describe('FabianComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ FabianComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

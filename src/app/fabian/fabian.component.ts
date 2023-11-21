@@ -2,8 +2,9 @@ import {Component, OnInit, AfterViewInit, OnDestroy, ViewChild, ElementRef} from
 import {IArtistes} from "../nicolas/artistes";
 import {ArtistesService} from "../nicolas/artistes.service";
 import * as d3 from "d3";
+import {IAlbums} from "../nicolas/albums";
 import {promises, truncate} from "fs";
-import {max, min, select} from "d3";
+import {hierarchy, max, min, select} from "d3";
 
 @Component({
   selector: 'app-fabian',
@@ -12,15 +13,20 @@ import {max, min, select} from "d3";
 })
 export class FabianComponent implements OnInit {
   artistes: IArtistes[] = []; // Le tableau qui stockera les données JSON
+  albums: IAlbums[] = []; // le tableau qui stockera les données json des albums
   artistesParAnnee: { [key: string]: number } = {};
   albumsParAnnee: { [key: string]: number } = {}; //création variable
-
+  albumDetails: any[] = [];
   selectedLocation: string = "toutes";
   selectedGenre: string = "tous";
   locationDropdownIndex: number = 0; // Index de l'option "Toutes les Locations"
   genreDropdownIndex: number = 0; // Index de l'option "Tous les Genres"
   selectedArtist: IArtistes | null = null;
+  selectedAlbum: IAlbums | null = null;
+
   artistesDeCetteAnnee: IArtistes[] = [];
+  albumsDeCetteAnnee: IArtistes[] = [];
+
   anneeSelected: string = "";
   private albumsParAnneeVal: { [key: string]: number } = {};
 
@@ -30,13 +36,19 @@ export class FabianComponent implements OnInit {
   ngOnInit(): void {
     this.artistes = this.artistesService.getArtistesBis(); // artiste recup les données json
     this.updateGraph();
-    //console.log(this.artistes);
+    console.log(this.artistes);
   }
+
+  //this.artistes possède toutes les données sur les artistes avec les albums par artiste
 
   // Gestionnaire d'événement pour le filtre "Location"
   updateLocationFilter(event: any) {
     this.selectedLocation = event.target.value;
     this.updateGraph();
+  }
+
+  showAlbumDetails(album: any) {
+    album.showDetails = !album.showDetails;
   }
 
   // Gestionnaire d'événement pour le filtre "Genre"
@@ -58,6 +70,9 @@ export class FabianComponent implements OnInit {
   effacerDetails() {
     this.selectedArtist = null;
   }
+  effacerDetailsAlbum() {
+    this.selectedAlbum = null;
+  }
 
   effacerListe() {
     this.anneeSelected = "";
@@ -65,9 +80,18 @@ export class FabianComponent implements OnInit {
 
   afficherDetails(artiste: IArtistes) {
     this.selectedArtist = artiste;
+    console.log(this.selectedArtist)
+
+  }
+
+  afficherDetailsAlbum(album: IAlbums) {
+    this.selectedAlbum = album;
+    console.log(this.selectedAlbum)
+
   }
 
   // Fonction pour mettre à jour le graphique en fonction des filtres
+
   updateGraph() {
     d3.select('svg').remove();
     // Filtrer les données en fonction des filtres sélectionnés (this.selectedLocation et this.selectedGenre)
@@ -78,6 +102,8 @@ export class FabianComponent implements OnInit {
       );
     });
     console.log(filteredArtists);
+    console.log(this.artistes);
+
     // Ici, vous pouvez exécuter le code pour créer le graphique avec D3.js en utilisant les données récupérées.
     // Assurez-vous que la création du graphique est effectuée après avoir chargé les données.
     // 1. Trouver l'année de début la plus ancienne et la plus récente
@@ -122,12 +148,14 @@ export class FabianComponent implements OnInit {
         this.artistesParAnnee[anneeDebut]++; // Convertir l'année en chaîne de caractères
       }
     });
+    console.log(this.artistesParAnnee)
 
 
     ///////////////////// pour faire le couple de données année, nbr d'album
     for (let annee = anneeDebutPlusAncienne; annee <= anneeDebutPlusRecente; annee++) {
       this.albumsParAnnee[annee] = 0; // Convertir l'année en chaîne de caractères
     }
+    console.log(this.albumsParAnnee)
 
     filteredArtists.forEach((artiste) => {
       const anneePubli = parseInt(artiste.albums[0]["publicationDate"]);
@@ -136,6 +164,7 @@ export class FabianComponent implements OnInit {
       }
     });
 
+    console.log(this.albumsParAnnee)
 
 
 ///////////////// pour enlever les années ou il ya 0 pour faire une visu ou c'est pas important
@@ -146,87 +175,149 @@ export class FabianComponent implements OnInit {
         obj[parseInt(key)] = value;
         return obj;
       }, {});
-    ////////////////////////////////////////GRA¨PHE
 
 
-    // set the color scale
-    function drawPieChart(albumsData: { [year: number]: number }): void {
-      const width = 400;
-      const height = 400;
-      const radius = Math.min(width, height) / 2;
 
-      const svg = d3.select('body') // Sélectionnez le conteneur où vous souhaitez afficher le pie chart
-        .append('svg')
-        .attr('width', width)
-        .attr('height', height)
-        .append('g')
-        .attr('transform', `translate(${width / 2},${height / 2})`);
+    ////////////////////////////////////////
+    ///////////////////////////////////////
+    //////////////////////////////////////
+    //graphe
 
-      const color = d3.scaleOrdinal(d3.schemeCategory10);
+    const albumsParAnneeVal1 = Object.entries(albumsParAnneeVal);
+    const albumsParAnneeVal2 = albumsParAnneeVal1.map(([year, count]) => ({ year: year.toString(), value: count }));
 
-      const pie = d3.pie<number>().value(d => d);
 
-      const dataEntries = Object.entries(albumsData);
-      const dataValues = dataEntries.map(([year, count]) => count);
+    const albumsData = albumsParAnneeVal2;
 
-      const arcs = d3.arc<any>()
-        .innerRadius(0)
-        .outerRadius(radius);
 
-      const pieData = pie(dataValues);
+    //////////////////////////////////
+    //DIMENSION GRAPHE
+    /////////////////////////////////
+    const margin = { top: 20, right: 20, bottom: 40, left: 60 };
+    const width = 800 - margin.left - margin.right; // Ajustement de la largeur
+    const height = 400 - margin.top - margin.bottom;
 
-      const arcsData = svg.selectAll('arc')
-        .data(pieData)
-        .enter()
-        .append('g');
 
-      arcsData.append('path')
-        .attr('fill', (_, i) => color(i.toString()))
-        .attr('d', arcs);
+    const svg = d3.select('body')
+      .append('svg')
+      .attr('width', width + margin.left + margin.right)
+      .attr('height', height + margin.top + margin.bottom)
+      .append('g')
+      .attr('transform', `translate(${margin.left},${margin.top})`);
 
-      arcsData.append('text')
-        .attr('transform', d => `translate(${arcs.centroid(d)})`)
-        .attr('dy', '0.35em')
-        .text((d, i) => dataEntries[i][0]); // Utilisation des années comme libellés
 
-      const legend = svg.selectAll('.legend')
-        .data(Object.keys(albumsData))
-        .enter()
-        .append('g')
-        .attr('class', 'legend')
-        .attr('transform', (_, i) => `translate(-50,${i * 20})`);
 
-      legend.append('rect')
-        .attr('x', width - 18)
-        .attr('width', 18)
-        .attr('height', 18)
-        .style('fill', (_, i) => color(i.toString()));
+    /////////////////////////////////
+    //DEFINITION AXES
+    ////////////////////////////////
+    const xScale = d3.scaleLinear()
+      .domain([anneeDebutPlusAncienne-1, anneeDebutPlusRecente]) // Utilisation de l'année la plus ancienne et la plus récente
+      .range([0, width]);
 
-      legend.append('text')
-        .attr('x', width - 24)
-        .attr('y', 9)
-        .attr('dy', '.35em')
-        .style('text-anchor', 'end')
-        .text(d => d);
+
+    //definir la valeur max
+    function getMaxValue(data: { [p: number]: number }): number {
+
+
+      const anneeSelected: string = "";
+
+      // Utilisation de Object.values() pour obtenir toutes les valeurs de l'objet
+      const valuesArray: number[] = Object.values(data);
+
+      // Utilisation de Math.max() pour trouver la valeur maximale dans le tableau
+      const maxValue: number = Math.max(...valuesArray);
+
+      return maxValue;
     }
+    const maxValue = getMaxValue(albumsParAnneeVal);
 
-// Utilisation de la fonction drawPieChart avec vos données albumsparannee
+    const yScale = d3.scaleLinear()
+      .domain([0,maxValue+1]) // Plage des valeurs des albums
+      .range([height, 0])
+      .nice();
+
+    ////////////////////////////
+    //SVG
+    /////////////////////////////
+
+    svg.selectAll('circle')
+      .data(albumsData)
+      .enter().append('circle')
+      .attr('cx', d => xScale(Number(d.year)))
+      .attr('cy', d => yScale(d.value))
+      .attr('r', 5) // Taille des points
+      .style('fill', 'steelblue'); // Couleur des points
+
+    // Ajout des axes x et y
+    const xAxis = d3.axisBottom(xScale).tickFormat(d3.format('d')); // Format des étiquettes de l'axe x
+    const yAxis = d3.axisLeft(yScale).ticks(5);
+
+    svg.selectAll('.dot')
+      .data(albumsData)
+      .enter()
+      .append('circle')
+      .attr('class', 'dot')
+      .attr('cx', d => xScale(Number(d.year)))
+      .attr('cy', d => yScale(d.value))
+      .attr('r', 5) // Taille des points
+      .attr('fill', 'blue') // Couleur par défaut des points
+      .on('mouseover', function () {
+        d3.select(this).attr('fill', 'red'); // Changement de couleur au survol
+      })
+      .on('mouseout', function () {
+        d3.select(this).attr('fill', 'blue'); // Revenir à la couleur initiale
+      })
+      .on('click', (d) => {
+        const annee = d.srcElement.__data__['year'];
+        console.log(`Vous avez cliqué sur le scatter plot de l'année ${annee}`);
+        this.anneeSelected = annee;
+
+        const albumsDeCetteAnnee = filteredArtists
+          .filter(artiste => artiste.albums[0].publicationDate === annee)
+          .map(artiste => ({
+            artistName : artiste.name,
+            publicationDate: artiste.albums[0].publicationDate,
+            title: artiste.albums[0].title,
+            songs: artiste.albums[0].songs,
+            allSongs: artiste.albums.reduce((songsList: string[], album) => {
+              if (album.publicationDate === annee) {
+                songsList.push(...album.songs);
+              }
+              return songsList;
+            }, [])
+          }));
+
+        this.albumDetails = albumsDeCetteAnnee;
+        console.log(this.albumDetails);
+      });
 
 
-    drawPieChart(albumsParAnneeVal);
 
 
 
-
-
+    svg.append('g')
+      .attr('transform', `translate(0, ${height})`)
+      .call(xAxis)
+      .selectAll('text')
+      .attr('transform', 'rotate(-45)') // Inclinaison des étiquettes à -45 degrés
+      .attr('text-anchor', 'end') // Ancrage du texte à l'extrémité
+      .attr('dx', '-0.5em') // Décalage horizontal
+      .attr('dy', '0.5em'); // Décalage vertical
+    svg.append('g')
+      .call(yAxis)
+      .append('text')
+      .attr('transform', 'rotate(-90)')
+      .attr('y', 6)
+      .attr('dy', '.71em')
+      .style('text-anchor', 'end')
+      .text('Number of Albums');
 
 
   }
-
-
 
   ngOnDestroy(): void {
     d3.select('svg').remove();
   }
 }
+
 
